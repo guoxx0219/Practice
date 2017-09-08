@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// var arr = [1,2,3,4,5,6,7,8];
+	// push(arr,'a','b','c');
+	// function push(arr){
+	// 	for (var i = 1; i < arguments.length; i++) {
+	// 		arr[arr.length] = arguments[i];
+	// 	}
+	// 	console.log(arr);
+	// }
+	// function push(arr,...value){
+	// 	for(var i = 0; i < value.length; i++){
+	// 	   arr[arr.length] = value[i];
+	// 	}
+	// 	console.log(arr);
+	// }
+
+	// 任意一个数组中存在某个特定的值，存在true，不存在false
+	// function exist(arr,value){
+	// 	if (!(typeof arr == 'object' && arguments.length >1)) {
+	// 		return '输入错误';
+	// 	}
+	// 	for (var i = 0; i < arr.length; i++) {
+	// 		if(arr[i] == value){
+	// 			return true;
+	// 		}
+	// 	}
+	// 	return false;
+	// }
+	
+	// 数组转换成字符串
+	// var arr = [1,2,3,4,5,6,7];
+	// var a = join(arr,'*');
+	// console.log(a);
+	// function join(arr,str){
+	// 	str = str==undefined ? '-' : str;
+	// 	var result = '';
+	// 	for (var i = 0; i < arr.length; i++) {
+	// 		if (i < arr.length-1) {
+	// 			result += arr[i] + str;
+	// 		}else{
+	// 			result += arr[i];
+	// 		}
+	// 	}
+	// 	return result;
+	// }
+	
+	// var arr1 = [1,26,55,52,12,54,45,65,0];
+	// console.log(filter(arr1));
+	// // 提取数组里的偶数元素
+	// function filter(arr){
+	// 	var newarr = [];
+	// 	for (var i = 0; i < arr.length; i++) {
+	// 		if(arr[i] % 2 == 0){
+	// 			newarr[newarr.length] = arr[i];
+	// 		}
+	// 	}
+	// 	return newarr;
+	// }
+	
+	// 全局变量、局部变量
+	// var num = 10;   
+	// function fn(){    
+	// 	alert(num);          
+	// 	var num = 'a';
+	// 	alert(num);
+	// 	aa('x');
+	// 	function aa(num){
+	// 		alert(num);
+	// 		var num = 15;
+	// 		alert(num);
+	// 	}
+	// }
+	// alert(num);
+	// fn();
+
+	// function aa(num1,num2){
+	// 	return num1+num2;
+	// }
+	// function bb(num1,num2){
+	// 	return num1-num2;
+	// }
+	// function cc(num1,num2){
+	// 	return num1+num2;
+	// }
+	// console.log(math(3,4,aa));
+	// function math(num1,num2,fn){
+	// 	return fn(num1,num2);
+	// }
+
+	// 映射
+	// var arr = [1,2,3,5,6,8];
+	// var result = map(arr,function(value){
+	// 	return value*2;
+	// });
+	// console.log(result);
+	// function map(arr,fn){
+	// 	var newarr = [];
+	// 	for (var i = 0; i < arr.length; i++) {
+	// 		newarr[newarr.length] = fn(arr[i]);
+	// 	}
+	// 	return newarr;
+	// }
+
+	// filter
+	var arr = [1,2,3,45,86,12,65,52];
+	var result = filter(arr,function(value){
+		return value > 20;
+	});
+	console.log(result);
+	function filter(arr,fn){
+		var newarr = [];
+		for (var i = 0; i < arr.length; i++) {
+			if(fn(arr[i])){
+				newarr[newarr.length] = arr[i];
+			}
+		}
+		return newarr;
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// var z = prompt('输入行数：', 10);
+	// document.write('<table border=1 cellspacing=0 cellpadding=0 width=500>'); 
+	// for (var j = 1; j <= z; j++) {
+	// 	document.write('<tr height=50 align=center>');
+	// 	for (var i = 1; i <= j; i++) {
+	// 		if (i%2==0) {
+	// 			document.write('<td bgcolor=blue>'+j+'*'+i+'='+j*i+'</td>');
+	// 		}else{
+	// 			document.write('<td bgcolor=green>'+i+'*'+j+'='+j*i+'</td>');
+	// 		}
+	// 	}
+	// 	document.write('</tr>');
+	// }
+	// document.write('</table>');
+
+
+	// for (var i = 1; i <= 10; i++) {
+	// 	for (var j = 1; j <= i; j++) {
+	// 		if ((i==3 && j==3) || (i==4 && j==3)) {
+	// 			document.write('&nbsp');
+	// 		}
+	// 		document.write(j+'*'+i+'='+j*i+'&nbsp');
+	// 	}
+	// 	document.write('<br/>');
+	// }
+	
+	// var table= '<table>';
+	// var color;
+	// for (var i = 1; i <= 10; i++) {
+	// 	if (i % 2 == 0) {
+	// 		color = 'red';
+	// 	}else{
+	// 		color = 'blue';
+	// 	}
+	// 	table += '<tr bgcolor='+color+'>';
+	// 	for (var j = 1; j <= i; j++) {
+	// 		table += '<td>'+j+'-'+i+'</td>'+'&nbsp';
+	// 	}
+	// 	table += '</tr>';
+	// }
+	// table += '</table>';
+	// document.write(table);
+
+	// 正三角
+	// 行数(i)    空格（row-i）   星号（2*i-1）
+	//  1             4              1
+	//  2             3              3
+	//  3             2              5
+	//  4             1              7
+	//  5             0              9
+	// var row = prompt('输入行数：',5);
+	// for (var i = 1; i <= row; i++) {
+	// 	for (var j = 1; j <= (row-i); j++) {
+	// 		document.write('-');
+	// 	}
+	// 	for (var j = 1; j <= (2*i-1); j++) {
+	// 		document.write('*');
+	// 	}
+	// 	document.write('<br/>');
+	// }
+	// for (var i = 1; i <= row-1; i++) {
+	// 	for (var j = 1; j <= i; j++) {
+	// 		document.write('-');
+	// 	}
+	// 	for (var j = 1; j <= 2*(row-i)-1; j++) {
+	// 		document.write('*');
+	// 	}
+	// 	document.write('<br/>');
+	// }
+		
+	// 菱形
+	// 行数(i)    空格（row1-i/i-row1）          星号（2*i-1/2i-row1）
+	//   1                     4                           1
+	//   2                     3                           3
+	//   3                     2                           5
+	//   4                     1                           7
+	//   5                     0                           9
+	//   6                     1                           7
+	//   7                     2                           5
+	//   8                     3                           3
+	//   9                     4                           1
+	// var row = prompt('输入行数：',9)-0;
+	// var row1 = (row+1)/2;
+	// for (var i = 1; i <= row; i++) {
+	// 	if (i < row1) {
+	// 		for(var j = 1; j <= row1-i; j++){
+	// 			document.write('-');
+	// 		}
+	// 		for(var j = 1; j <= 2*i-1; j++){
+	// 			document.write('*');
+	// 		}
+	// 	}else{
+	// 		for(var j = 1; j <= i-row1; j++){
+	// 			document.write('-');
+	// 		}
+	// 		for(var j = 1; j <= 2*(row-i)+1; j++){
+	// 			document.write('*');
+	// 		}
+	// 	}
+	// 	document.write('<br/>');
+	// }
+
+	// 斐波那契数列
+	// 1 1 2 3 5 8 13 21 34 55 89
+	// i     j     k=i+j
+	//      i=j    j=k
+	// var i = 1,j = 1, k;
+	// document.write(i+'&nbsp'+j+'&nbsp');
+	// for (var k = 0; k < 100;) {
+	// 	k = i + j;
+	// 	document.write(k+'&nbsp');
+	// 	i = j;
+	// 	j = k;
+	// 	if (i + j > 100) {
+	// 		break;
+	// 	}
+	// }
+	
+	// 数组正序输出
+	// var arr = [1,2,3,4,5,6,7,8];
+	// for (var i = 0; i < arr.length; i++) {
+	// 	console.log(arr[i]);
+	// }
+	
+	// 数组逆序输出
+	// var arr = [1,2,3,4,5,6,7,8];
+	// for (var i = arr.length-1; i >= 0; i--) {
+	// 	console.log(arr[i]);
+	// }
+	
+	// 数组输出最大值
+	// var arr = [9,53,36,61,43,28,12,20];
+	// var max = arr[0];
+	// for (var i = 0; i < arr.length; i++) {
+	// 	if (max < arr[i]) {
+	// 		max = arr[i];
+	// 	}
+	// }
+	// console.log(max);
+	function MaxArray(arr){
+		var max = arr[0];
+		for (var i = 0; i < arr.length; i++) {
+			if (max < arr[i]) {
+				max = arr[i];
+			}
+		}
+		console.log(max);
+	}
+	var arr = [9,53,36,61,43,28,12,20];
+	MaxArray(arr);
+
+	// 一维数组从大到小排列
+	// var arr = [9,53,36,61,43,28,12,20];
+	// for (var i = 0; i < arr.length; i++) {
+	// 	for (var j = i+1; j < arr.length; j++) {
+	// 		if(arr[i] < arr[j]){
+	// 			var temp = arr[i];
+	// 			arr[i] = arr[j];
+	// 			arr[j] = temp;
+	// 		}
+	// 	}
+	// }
+	// console.log(arr);
+
+	
+	// 遍历二维数组
+	// var classes = [[80,90,98],[70,75,85],[60,64,67]];
+	// for(i=0; i<classes.length; i++){
+	//   for(j=0; j<classes[i].length; j++){
+	//   	console.log(classes[i][j]);
+	// 	}
+	// }
+	
+	// 二维数组的最大值
+	// var classes = [[80,90,98],[70,75,85],[60,64,67]];
+	// var max = classes[0][0];
+	// for (var i = 0; i < classes.length; i++) {
+	// 	for (var j = 0; j < classes[i].length; j++) {
+	// 		if(max < classes[i][j]){
+	// 			max = classes[i][j];
+	// 		}
+	// 	}
+	// }
+	// console.log(max);
+
+	//数组去空：
+	// var arr = [1,2,3,,4,5,6,,7,8];
+	// var newarr = [];
+	// for (var i = 0; i < arr.length; i++) {
+	// 	// 还可写成arr[i]==undefined
+	// 	if (typeof arr[i] == 'undefined') {
+	// 		continue;
+	// 	}
+	// 	newarr[newarr.length] = arr[i];
+	// }
+	// console.log(newarr);
+
+
+</script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// var num = 10;
+		// // num 正数 alert true
+		// if (num > 0) {
+		// 	alert(true);
+		// }
+	
+		// var num1 = -10;
+		// // num1 奇数 true 偶数 false
+		// if (num1) {
+		// 	alert(true);
+		// }else{
+		// 	alert(false);
+		// }
+
+		// var score = prompt('请输入你的成绩', 60);
+		// // score  90-100  优秀
+		// //        80-90   良好
+		// //        70-80   中等
+		// //        60-70   及格
+		// //        0-60    不及格
+		// if (score >= 90 && score <= 100) {
+		// 	alert('优秀');
+		// }else if (score >= 80 && score < 90){
+		// 	alert('良好');
+		// }else if (score >= 70 && score < 80){
+		// 	alert('中等');
+		// }else if (score >= 60 && score < 70){
+		// 	alert('及格');
+		// }else if (score >= 0 && score < 60){
+		// 	alert('不及格');
+		// }else{
+		// 	alert('输入错误');
+		// }
+		// var week = prompt('今天是周几',1) - 0;
+		// switch(week){
+		// 	case 1:
+		// 		alert("一组");
+		// 		break;
+		// 	case 2:
+		// 		alert("二组");
+		// 		break;
+		// 	case 3:
+		// 		alert("三组");
+		// 		break;
+		// 	case 4:
+		// 		alert("四组");
+		// 		break;
+		// 	case 5:
+		// 		alert("五组");
+		// 		break;
+		// 	case 6:
+		// 		alert("六组");
+		// 		break;
+		// 	case 7:
+		// 		alert("七组");
+		// 		break;
+		// 	default:
+		// 		alert("输入错误");
+		// }
+		// alert(!null);
+		// for (var i = 1; i <= 10; i++) {
+		// 	alert(i);
+		// }
+		var sum = 0;
+		// for (var i = 1; i <= 10; i++) {
+		// 	sum += i;
+		// }
+		// console.log(sum);
+		// 奇数求和
+		for (var i = 1; i <= 10; i++) {
+			if (i % 2 == 1) {
+				sum += i;
+			}
+		}
+		for (var i = 1; i <= 10; i += 2) {
+			sum += i;
+		}
+		console.log(sum);
+	</script>
+</body>
+</html>
