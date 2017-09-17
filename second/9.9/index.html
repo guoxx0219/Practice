@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// indexOf 判断一维数组中是否存在某个值，存在则返回第一次出现的位置，不存在返回1
+		var arr = [1,2,3,4,5,8];
+		// console.log(indexOf(arr,5));
+		// function indexOf(arr,value){
+		// 	for (var i = 0; i < arr.length; i++) {
+		// 		if(arr[i] == value){
+		// 			return i;
+		// 		}
+		// 	}
+		// 	return -1;
+		// }
+		
+		// 逆序查询
+		// console.log(lastIndexOf(arr,5));
+		// function lastIndexOf(arr,value){
+		// 	for(var i = arr.length-1; i >= 0; i--){
+		// 		if (arr[i] == value) {
+		// 			return i;
+		// 		}
+		// 	}
+		// 	return -1;
+		// }
+		
+		// 将数组顺序反转
+		// console.log(reverse(arr));
+		// function reverse(arr){
+		// 	var newarr = [];
+		// 	for(var i = arr.length-1; i >= 0; i--){
+		// 		// 向newarr数组中添加一系列的值,还可写成
+		// 		// newarr[newarr.length] = arr[i];
+		// 		push(newarr,arr[i]);
+		// 	}
+		// 	return newarr;
+		// }
+		// function push(arr,...rest){
+		// 	for (var i = 0; i < rest.length; i++) {
+		// 		arr[arr.length] = rest[i];
+		// 	}
+		// 	return arr;
+		// }
+		
+		// 万能的删除,任意位置删除任意个数
+		// console.log(spliceDel(arr,1,2));
+		// function spliceDel(arr,pos,num){
+		// 	var newarr = [];
+		// 	for (var i = 0; i < arr.length; i++) {
+		// 		if (i>=pos && i<pos+num) {
+		// 			continue;
+		// 		}
+		// 		newarr[newarr.length] = arr[i];
+		// 	}
+		// 	return newarr;
+		// }
+
+		// 万能的添加（任意位置添加任意个数，push只能在最后添加）
+		// console.log(spliceAdd(arr,2,'x','y','z'));
+		// function spliceAdd(arr,pos,...rest){
+		// 	var newarr = [];
+		// 	for (var i = 0; i < pos; i++) {
+		// 		newarr[newarr.length] = arr[i];
+		// 	}
+		// 	for (var i = 0; i < rest.length; i++) {
+		// 		newarr[newarr.length] = rest[i];
+		// 	}
+		// 	for (var i = pos; i < arr.length; i++) {
+		// 		newarr[newarr.length] = arr[i];
+		// 	}
+		// 	return newarr;
+		// }
+
+		// 万能的删除、添加（在任意的位置删除并添加元素）
+		// console.log(splice(arr,2,1,'x','y','z'));
+		// function splice(arr,pos,num,...rest){
+		// 	var newarr = [];
+		// 	// 此处直接赋值，是因为spliceDel的结果为一个数组，直接赋值，若加上[newarr.length]，则表示将整个spliceDel的数组赋值给newarr[0]
+		// 	newarr = spliceDel(arr,pos,num);
+		// 	if (rest.length > 0) {
+		// 		// 此处的...表示将rest数组拆开，形成每一个元素，不加...，仅仅只有rest为一个数组，作为参数传值时，spliceAdd中的rest就会形成二维数组。同时，注意此处的数组传值为newarr，不是arr，是为新数组添加元素
+		// 		newarr = spliceAdd(newarr,pos,...rest);
+		// 	}
+		// 	return newarr;
+		// }
+
+		// 数组arr中是否存在大于2的元素，存在true，不存在false
+		// console.log(some(arr,function(value){
+		// 	return value > 2;
+		// }));
+		// function some(arr,fn){
+		// 	for (var i = 0; i < arr.length; i++) {
+		// 		if(fn(arr[i])){
+		// 			return true;
+		// 		}
+		// 	}
+		// 	return false;
+		// }
+
+		// 回调函数
+		// 数组arr中的所有元素是否都大于2，是true，否false
+		// console.log(every(arr,function(value){
+		// 	return value > 2;
+		// }));
+		// 还可写成
+		// console.log(shifou(arr,(value) => value>2));
+		// function every(arr,fn){
+		// 	for (var i = 0; i < arr.length; i++) {
+		// 		if(!fn(arr[i])){
+		// 			return false;
+		// 		}
+		// 	}
+		// 	return true;
+		// }
+		
+		var arr = [1,2,3,4,[5,6,7]];
+
+		//递归函数
+		//传址（浅拷贝），两个数组arr，arr1指向同一个地址
+		var arr1 = arr;
+
+		arr1[1] = 'a';
+		arr[4] = 'x';
+		console.log(arr1);   //[1, "a", 3, 4, "x"]
+		console.log(arr);    //[1, "a", 3, 4, "x"]
+
+		//传值（深拷贝），数组arr1有自己的存储空间
+		var arr1 = copy(arr);   
+
+		console.log(arr1);      //[1, 2, 3, 4, [5,6,7]]
+		function copy(arr){
+			var arr1 = [];
+			for (var i = 0; i < arr.length; i++) {
+				if (typeof arr[i] == 'object') {
+					arr1[i] = copy(arr[i]);
+				}else{
+					arr1[i] = arr[i];
+				}
+			}
+			return arr1;
+		}
+		arr1[1] = 'a';
+		arr[4][2] = 'x';      
+		console.log(arr1);    //[1, "a", 3, 4,[5,6,7]]
+		console.log(arr);     //[1, 2, 3, 4, [5,6,'x']]
+	</script>
+</body>
+</html>
