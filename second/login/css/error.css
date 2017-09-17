@@ -30,32 +30,7 @@ main{
 	text-align: center;
 }
 h2{
-	font-size: 24px;
-	margin-top: 10px;
-	margin-bottom: 20px;
+	font-size: 18px;
+	margin: 10px auto;
 	color: #565252;
-}
-main div{
-	height: 30px;
-	padding: 6px 25px;
-}
-main div input{
-	width: 100%;
-	height: 100%;
-	padding-left: 10px;
-	border: 1px solid #9c9a9a;
-	transition: .5s;
-	box-sizing: border-box;
-}
-main div input:focus{
-	border-color: #5daff1;
-}
-main button{
-	width: 100%;
-	line-height: 32px;
-	background: #5daff1;
-	text-align: center;
-	color: #fff;
-	border: 0;
-	margin-top: 16px;
 }
