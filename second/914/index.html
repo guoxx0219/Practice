@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// let arr = [1,2,3,4,6,35,54];
+
+		// let arr1 = new Array('x','y','z');
+		// console.log(arr1);          //['x','y','z']
+		// // let arr1 = new Array(5);  //[],length=5
+		// // console.log(arr1);
+		// // let arr2 = Array.of(5);
+		// // console.log(arr2);     //[5]
+
+		// arr.length = 0;
+		// console.log(arr);      //[]
+		// arr.length = 6;
+		// console.log(arr);      //[1,2,3,4,undefined,undefined]
+
+		// let pusharr = arr.push('x','y','z');
+		// console.log(pusharr);   //7
+		// console.log(arr);       //[1,2,3,4,'x','y','z']
+
+		// let result = arr.unshift(5,6,8);
+		// console.log(result);    //10
+		// console.log(arr);       //[5,6,8,1,2,3,4,'x','y','z']
+
+		// let poparr = arr.pop();
+		// console.log(poparr);    //z
+		// console.log(arr);       //[5,6,8,1,2,3,4,'x','y']
+
+		// let del = arr.shift();
+		// console.log(del);       //5
+		// console.log(arr);       //[6,8,1,2,3,4,'x','y']
+
+		// let result1 = arr.splice(1,2);
+		// console.log(result1);    //[8, 1]
+		// console.log(arr);        //[6, 2, 3, 4, "x", "y"]
+
+		// let result2 = arr.splice(2,0,'x','y');
+		// console.log(result2);    //[]
+		// console.log(arr);        //[6, 2,'x','y',3, 4, "x", "y"]
+
+		// let result3 = arr.splice(2,1,'w','h');
+		// console.log(result3);      //['x']
+		// console.log(arr);          //[6, 2,'w','h','y',3, 4, "x", "y"]
+
+		// let str = arr.join('-');
+		// console.log(str);            //1-2-3-4
+		// console.log(arr);            //[1,2,3,4]
+
+		// console.log(arr.reverse());  //[4,3,2,1]
+		// console.log(arr);            //[4,3,2,1]
+
+		// let newarr = [15,68,23,56,41,36,102,223];
+		// console.log(newarr.sort());    //[102, 15, 223, 23, 36, 41, 56, 68]
+		// console.log(newarr);           //[102, 15, 223, 23, 36, 41, 56, 68]
+		// arr.sort(function(a,b){
+		//   return a - b <0;
+		// });
+		// console.log(newarr);              //[15, 23, 36, 41, 56, 68, 102, 223]
+
+		
+		//没有返回值，用于遍历，参数：数组元素，下标，数组
+		// let sum = 0;
+		// //let result4 = arr.forEach(value => sum += value);
+		// let result4 = arr.forEach(function(value,index,obj){
+		// 	sum += value;
+		// });
+		// console.log(result4);              //undefined
+		// //遍历,取偶数
+		// let ou = [];
+		// let result5 = arr.forEach(function(value,index,obj){
+		// 	if (value%2==0) {
+		// 		ou.push(value);
+		// 	}
+		// });
+		// console.log(ou);                    //[4, 2]
+
+		// some、every 返回布尔值   
+		// map、filter  返回数组
+
+		// let fn = (num) => ({name:'zhangsan',age:18});
+		// let aa = (num) => {
+		// 	return {name:num};
+		// }
+		// console.log(fn());               //Object {name: "zhangsan", age: 18}
+		// console.log(aa(11));             //Object {name: 11}
+
+		let arr = [1,2,1,3,4,5,1,2,3];
+		// // 去重，将数组中重复的元素去掉
+		// 方法1：
+		console.log(del(arr));
+		function del(arr){
+			let newarr = [];
+			for (var i = 0; i < arr.length; i++) {
+				if (newarr.includes(arr[i])) {
+					continue;
+				}
+				newarr.push(arr[i]);
+			}
+			return newarr;
+		}
+		// // 方法2：
+		// console.log(del2(arr));
+		// function del2(arr){
+		// 	let newarr = [];
+		// 	for (var i = 0; i < arr.length; i++) {
+		// 		let flag = true;
+		// 		for (var j = i+1; j < arr.length; j++) {
+		// 			if (arr[i] == arr[j]) {
+		// 				flag = false;
+		// 				// 跳出当前循环
+		// 				break;
+		// 			}
+		// 		}
+		// 		if (flag == true) {
+		// 			newarr.push(arr[i]);
+		// 		}
+		// 	}
+		// 	return newarr;
+		// }
+		// 方法3：
+		// let arr = [1,2,3,4,5,1,2,3];
+		// function del3(arr){
+		// 	let newarr = [];
+		// 	for (let i = 0; i < arr.length; i++) {
+		// 		let arr1 = [];
+		// 		for (let j = i+1; j < arr.length; j++) {
+		// 			arr1.push(arr[j]);
+		// 		}
+		// 		if (!arr1.includes(arr[i])) {
+		// 			newarr.push(arr[i]);
+		// 		}
+		// 	}
+		// 	return newarr;
+		// }
+		// console.log(del3(arr));
+
+		// Array.prototype.del3 = function(){
+		// 	let newarr = [];
+		// 	for (let i = 0; i < this.length; i++) {
+		// 		let arr1 = [];
+		// 		for (let j = i+1; j < this.length; j++) {
+		// 			arr1.push(this[j]);
+		// 		}
+		// 		if (!arr1.includes(this[i])) {
+		// 			newarr.push(this[i]);
+		// 		}
+		// 	}
+		// 	return newarr;
+		// }
+		// let arr=[1,2,3,4,5,1,2,3]
+		// console.log(arr.del3());
+		
+		// Array.prototype.delRepeat = function(){
+		// 	let newarr = [];
+		// 	for (var i = 0; i < this.length; i++) {
+		// 		let flag = true;
+		// 		for (var j = i+1; j < this.length; j++) {
+		// 			if (this[i] == this[j]) {
+		// 				flag = false;
+		// 				// 跳出当前循环
+		// 				break;
+		// 			}
+		// 		}
+		// 		if (flag == true) {
+		// 			newarr.push(this[i]);
+		// 		}
+		// 	}
+		// 	return newarr;
+		// };
+		// let arr=[1,2,3,4,5,1,2,3]
+		// console.log(arr.delRepeat());
+	</script> 
+</body>
+</html>

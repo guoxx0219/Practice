@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 150px;
+			height: 150px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+		// console.log(Math.round(-0.45));   //-0
+		// console.log(Math.round(-10.45));   //-10
+		// console.log(Math.round(-10.5));   //-10
+		// console.log(Math.round(-10.6));   //-11
+
+
+		// console.log(Math.random()*-10);   //-10~0
+		// console.log(Math.random()*10+10); //10~20
+		// console.log(Math.random()*15+5);  //5~20
+		// console.log(Math.random()*10-5);  //-5~5
+
+		// 鼠标移入时div块的颜色随机变化
+		var box = document.getElementById('box');
+		box.onmouseover = function(){
+			box.style.background = color();
+		}
+		function color(){
+			let str = `rgb(`;
+			for (var i = 0; i < 3; i++) {
+				let a = Math.round(Math.random()*255);
+				str += a+',';
+			}
+			str = str.slice(0, -1);
+			str += ')';
+			return str;
+		}
+
+
+		// 随机从数组中选择num个元素形成新数组,且元素不重复
+		let arr = ['a','b','c','d','e'];
+		// 方法1：
+		console.log(random1(arr,3));
+		function random1(arr,num){
+			let newarr = [];
+			for (var i = 0; i < num; i++) {
+				// random随机数0~1，乘arr.length为0~5，floor为向下取整0~4
+				let index = Math.floor(Math.random()*arr.length);
+				//方法2：
+				// while(newarr.includes(arr[index])){
+				// 	index = Math.floor(Math.random()*arr.length);
+				// }
+				//newarr.push(arr[index]);
+				//方法3：
+				// if(newarr.includes(arr[index])){
+				// 	i--;
+				// }else{
+				// 	newarr.push(arr[index]);
+				// }
+				//消除重复：
+				//方法1：
+				newarr.push(arr[index]);
+				arr.splice(index,1);
+			}
+			return newarr;
+		}
+		// 方法2：
+		// function random2(arr,num){
+		// 	let newarr = [];
+		// 	while(newarr.length < num){
+		// 		let index = Math.floor(Math.random()*arr.length);
+		// 		while(newarr.includes(arr[index])){
+		// 			index = Math.floor(Math.random()*arr.length);
+		// 		}
+		// 		newarr.push(arr[index]);
+		// 	}
+		// 	return newarr;
+		// }
+		// console.log(random2(arr,5));
+	</script>
+</body>
+</html>
