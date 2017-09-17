@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function Person(){
+	  this.name = 'zhangsan';
+	  this.age = 18;
+	  this.sex = 'nv';
+	  this.shenfen = `${this.name}身份`;
+	  this.say = function(){
+			alert(1);
+  		}
+	}
+	Person.prototype = {
+  		sleep : function(){
+  	  		alert('休息');
+ 		 },
+	}
+	Person.prototype.eat = function(){
+	  	  alert('eat');
+	}
+	let zhangsan = new Person();
+	let lisi = new Person();
+	// console.log(zhangsan.say == lisi.say);   //true
+	// zhangsan.eat();
+
+	// delete zhangsan.age;
+	// console.log(zhangsan.age);   //undefined
+	// delete zhangsan.say;
+	// zhangsan.say();  //报错
+	
+	zhangsan = null;
+	console.log(zhangsan);
+	</script>
+</body>
+</html>

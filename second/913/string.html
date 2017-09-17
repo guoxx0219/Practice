@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// let str = 'ab张三cd';
+		let str = 'abcdabcd';
+
+		// console.log(str.__proto__);
+		// console.log(str);
+		
+		// console.log(str.length);
+		// console.log(str.constructor);
+
+		// let char = str.charAt(1);    //b
+		
+		// let char = str.charCodeAt(1);   //98
+		
+		// let char = String.fromCharCode(98);   //b
+		// console.log(char);
+		
+		// let index = str.indexOf('abcd');     //0
+		// console.log(index);
+		// let index = str.lastIndexOf('abcd');    //4
+		// console.log(index);
+
+		// let includes = str.includes('ab');
+		// console.log(includes);
+		
+		// 截取：从指定位置开始，不包括结束位置。省略结束位置时，从开始位置一直到结束位置。不影响原来的字符串
+		// let str1 = str.slice(0, 4);
+		// let str1 = str.slice(2, 4);
+		// let str1 = str.slice(0, str.length-1);
+		// let str1 = str.slice(0, -1);
+		// console.log(str1);
+		// console.log(str);
+
+		// let str1 = str.substring(0, 4);
+		// console.log(str1);
+		// console.log(str);
+		
+		// let str1 = str.substr(2, 2);
+		// console.log(str1);
+		// console.log(str);
+		
+		// 不影响原来的字符串
+		// let result= str.replace('abcd','****');
+		// console.log(result);
+		// console.log(str);
+
+		// console.log(replaceAll(str,'bcd'));
+		// function replaceAll(str,rStr){
+		// 	var star = '';
+		// 	// 两种方式
+		// 	// let star = '*'.repeat(rStr.length);
+		// 	for (let i = 0; i < rStr.length; i++) {
+		// 		star += '*';
+		// 	}
+		// 	while(str.includes(rStr)){
+		// 		str = str.replace(rStr,star);
+		// 	}
+		// 	return str;
+		// }
+		
+		// var result = str.match('cd');
+		// console.log(result);
+
+		let sttr = '     abcdefgsf';
+		console.log(sttr.trim());
+		console.log(sttr);
+
+		// let strr = 'a-b-c-d';
+		// console.log(strr.split('-'));
+		// console.log(strr.split('-',2));
+
+		// let sst = 'aBCd';
+		// console.log(sst.toUpperCase());
+		// console.log(sst.toLowerCase());
+
+		// document.write(sst.fontcolor('red'));
+		// document.write(sst.fontsize(7));
+		// document.write(sst.sup());
+		// document.write(sst.sub());
+
+		let url = 'https://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.com';
+
+		console.log(found(url,'baidu'));
+		// 查找所有baidu的下标，方法1：
+		function found(str,rStr){
+			var newstr = [];
+			let star = '*'.repeat(rStr.length);
+			while(str.lastIndexOf(rStr) != -1){
+				newstr.push(str.indexOf(rStr));
+				str = str.replace(rStr,star);
+			}
+			return newstr;
+		}
+		// 方法2：依次截取5个字符的字符串，与rStr比较
+		// function position_(str,rStr){
+		// 	var newarr = [];
+		// 	for (var i = 0; i < str.length; i++) {
+		// 		if(str.substr(i, rStr.length) == rStr){
+		// 			newarr.push(i);
+		// 		}
+		// 	}
+		// 	return newarr;
+		// }
+		// console.log(position_(url,'baidu'));
+
+		// let arr = [];
+		// console.log(arr);
+	</script>
+</body>
+</html>
