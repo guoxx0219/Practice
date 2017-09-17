@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="../js打包/arrayDelBlank.js"></script>
+	<script>
+	let arr = [3,0,,1,,-2,6,,-4];
+	arrayDelBlank(arr);
+		// json方式，没有构造函数，直接实例化对象
+		// let zhangsan = {};
+		// zhangsan.name = 'zhangsan';
+ 	// 	zhangsan.sex = 'nv';
+		// zhangsan.age = 18;
+		// zhangsan.say = function(){
+		// 	alert(88);
+		// }
+
+		// // console.log(zhangsan);
+		// // zhangsan.say();
+
+		// alert(zhangsan.constructor);
+		
+
+
+		// 构造函数，this.属性名 = 变量（参数）
+		//  function Student(name,age,sex){
+		//   this.name = name;
+		//   this.age = age;
+		//   this.sex = sex;
+		//   this.shenfen = `${this.name}身份`;
+		//   this[1] = 'x';
+		//   this.say = function(value){
+		//   	  alert(value);
+		//   }
+		//   this.study = function(){    
+		//   	  alert(this.shenfen);
+		//   }
+  // }
+
+
+		// let zhangsan = new Student('zhangsan',18,'nv');
+		// let lisi = new Student('lisi',20,'nan');
+		// alert(lisi.study());
+
+		// console.log(zhangsan);
+		// console.log(lisi);
+		// console.log(zhangsan[1]);
+		
+		// alert(lisi.say());    //弹两次（2、undefined）。第二次弹出lisi.study的返回值为undefined，一般不对alert所在的函数在外弹alert。
+		// // 访问没有定义的属性，返回值undefined
+		// alert(zhangsan.class);
+		// // 访问没有定义的方法，会报错（undefined+运行）
+		// alert(zhangsan.learn);   //undefiend
+		// alert(zhangsan.learn());   //报错
+		
+		// 对象的遍历（for   in）
+		// for(let i in zhangsan){
+   			// console.log(`${i}---${zhangsan[i]}`);
+		// }
+
+
+
+		// 声明的同时添加属性和方法,其中属性名可加引号可不加  属性名 : 值,属性名 : 值
+		// let zhangsan = {
+		// 	age : 18,
+		// 	name : 'zhangsan',
+		// 	sex : 'nv',
+		// 	say : function(){
+		// 		alert(1);
+		// 	}
+		// };
+		// console.log(zhangsan.name);
+		// zhangsan.say();
+		
+
+
+
+		// --类名首字母通常大写
+		// class Person{                  
+  //   		constructor(name,age,sex){             
+  //      			this.name = name;
+  //      			this.age = age;
+  //      			this.sex = sex;
+  //   		}
+  //   		say(value){                      
+  //    			alert(value);
+  //  			};
+  //  			study(value){
+  //  				this.say(value);
+  //  			}
+  // 		}
+  // 		let zhangsan = new Person('zhangsan',20,'nan');
+  // 		console.log(zhangsan);
+  		// zhangsan.say('学习');
+  		// zhangsan.study('haha');
+  
+  	// 		var b =[1,2,3,4,5]
+			// console.log(typeof b.slice(10,12));
+			
+			var arr1 = [[1, 2, 3], [400, 500, 600], '-'];
+			alert(arr1[1][1]);
+	</script>
+</body>
+</html>

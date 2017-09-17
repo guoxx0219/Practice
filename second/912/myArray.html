@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>myArray</title>
+</head>
+<body>
+	<script>
+		// var arr = new Array('a','b','c','d');
+		
+		//自定义函数实现Array功能
+		// let arr = new myArray('a','b','c','d',1,2,3,4);
+		let arr = new myArray(3,0,1,-2,6,-4);
+		// 设置将空的位置用undefined来表示
+		// let arr = new myArray(undefined,3,0,undefined,1,undefined,-2,6,undefined,-4);
+
+		console.log(arr);
+
+		// arr.push('x','y','z');
+		// console.log(arr);
+
+		// console.log(arr.indexOf(4));
+
+		// console.log(arr.lastIndexOf('b'));
+
+		// console.log(arr.some(value=>typeof value == 'number'));
+
+		// console.log(arr.every(value=>typeof value == 'number'));
+
+		console.log(arr.reverse());
+
+		console.log(arr.join());
+
+		console.log(arr.sort());
+
+		console.log(arr.twoArray());
+
+		// console.log(arr.map(function(value){
+		// 	return value*2;
+		// }));
+		// 还可写成
+		console.log(arr.map(value=>value*2));
+
+		console.log(arr.filter(value=>value>=0));
+
+		console.log(arr.Max());
+
+		console.log(arr.Min());
+
+		console.log(arr.delBlank());
+
+		// console.log(arr.splice(2,2,'x','y','z'));
+
+		// console.log(arr.copy());
+
+		// 参数还可以为...rest
+		function myArray(){
+			for (let i = 0; i < arguments.length; i++) {
+				this[i] = arguments[i];
+			}
+			this.length = arguments.length;
+			// 给数组添加新的元素
+			this.push = function(){
+				for (let i = 0; i < arguments.length; i++) {
+					this[this.length] = arguments[i];
+					this.length ++;
+				}
+			}
+			//某一个元素首次出现的位置
+			this.indexOf = function(value){
+				for (let i = 0; i < this.length; i++) {
+					if(this[i] == value){
+						return i;
+					}
+				}
+				return -1;
+			}
+			// 某元素最后一次出现的位置
+			this.lastIndexOf = function(value){
+				for (let i = this.length-1; i >= 0; i--) {
+					if(this[i] == value){
+						return i;
+					}
+				}
+				return -1;
+			}
+			// 是否存在元素满足某个条件
+			this.some = function(fn){
+				for (let i = 0; i < this.length; i++) {
+					if(fn(this[i])){
+						return true;
+					}
+				}
+				return false;
+			}
+			// 是否存在所有元素满足某个条件
+			this.every = function(fn){
+				for(let i = 0; i < this.length; i++){
+					if (!fn(this[i])) {
+						return false;
+					}
+				}
+				return true;
+			}
+			// 将数组反转
+			this.reverse = function(){
+				var newarr = new myArray();
+				for(let i = this.length-1; i >= 0; i--){
+					newarr[newarr.length] = this[i];
+				}
+				return newarr;
+			}
+			// 每个元素都用指定的字符串连接起来，然后返回连接后的字符串
+			this.join = function(str){
+				// str = str==undefined ? '-' : str;
+				str = '-' || str;
+				var newarr = '';
+				for (let i = 0; i < this.length; i++) {
+					if (i < this.length-1) {
+						newarr += this[i] + str;
+					}else{	
+						newarr += this[i];
+					}
+				}
+				return newarr;
+			}
+			// 数组元素升序、降序
+			this.sortUp = function(){
+				for (var i = 0; i < this.length; i++) {
+					for (var j = i+1; j < this.length; j++) {
+						if (this[i] > this[j]) {
+							var temp = this[i];
+							this[i] = this[j];
+							this[j] = temp;
+						}
+					}
+				}
+				return this;
+			}
+			this.sortDown = function(){
+				for (var i = 0; i < this.length; i++) {
+					for (var j = i+1; j < this.length; j++) {
+						if (this[i] < this[j]) {
+							var temp = this[i];
+							this[i] = this[j];
+							this[j] = temp;
+						}
+					}
+				}
+				return this;
+			}
+			this.sort = function(str){
+				var result = new myArray();
+				str = str || '<';
+				if (str == '<') {
+					result = this.sortUp(this);
+				}else{
+					result = this.sortDown(this);
+				}
+				return result;
+			}
+			//两个数组合并为一个数组
+			this.twoArray = function(){
+				var newarr = new myArray();
+				for (let i = 0; i < this.length; i++) {
+					newarr[newarr.length] = this[i];
+				}
+				for (let i = 0; i < this.length; i++) {
+					newarr[newarr.length] = this[i];
+				}
+				return newarr;
+			}
+			//映射map:数组中的每个元素都*2
+			this.map = function(fn){
+				var newarr = new myArray();
+				for (var i = 0; i < this.length; i++) {
+					newarr[newarr.length] = fn(this[i]);
+				}
+				return newarr;
+			}
+			// 映射filter：提取数组中大于0的数组元素
+			this.filter = function(fn){
+				var newarr = new myArray();
+				for (var i = 0; i < this.length; i++) {
+					if (fn(this[i])) {
+						newarr[newarr.length] = this[i];
+					}
+				}
+				return newarr;
+			}
+			// 数组中的最大值
+			this.Max= function(){
+				var max = this[0];
+				for (var i = 0; i < this.length; i++) {
+					if(max < this[i]){
+						max = this[i];
+					}
+				}
+				return max;
+			}
+			// 数组中的最小值
+			this.Min= function(){
+				var min = this[0];
+				for (var i = 0; i < this.length; i++) {
+					if(min > this[i]){
+						min = this[i];
+					}
+				}
+				return min;
+			}
+			// 数组去空
+			this.delBlank = function(){
+				var newarr = new myArray();
+				for (var i = 0; i < this.length; i++) {
+					if (this[i] != undefined) {
+						newarr.push(this[i]);
+					}
+				}
+				return newarr;
+			}
+			
+			// 万能的添加、删除:从指定的索引开始删除若干元素，然后再从该位置添加若干元素
+			this.spliceDel = function(pos,num){
+				var newarr = new myArray();
+				for (var i = 0; i < this.length; i++) {
+					if (i>=pos && i<pos+num) {
+						continue;
+					}
+					newarr[newarr.length] = this[i];
+				}
+				return newarr;
+			}
+			this.spliceAdd = function(arr,pos,...rest){
+				var newarr = new myArray();
+				for (var i = 0; i < pos; i++) {
+					newarr[newarr.length] = arr[i];
+				}
+				for (var i = 0; i < rest.length; i++) {
+					newarr[newarr.length] = rest[i];
+				}
+				for (var i = pos; i < arr.length; i++) {
+					newarr[newarr.length] = arr[i];
+				}
+				return newarr;
+			}
+			this.splice = function(pos,num,...rest){
+				var newarr = new myArray();
+				newarr = this.spliceDel(pos,num);
+				if (rest.length>0) {
+					newarr = this.spliceAdd(newarr,pos,...rest);
+				}
+				return newarr;
+			}
+			// 将一个数组赋值给另一个数组，值传递
+			this.copy = function(){
+				var newarr = new myArray();
+				for (var i = 0; i < this.length; i++) {
+					if (typeof this[i]=='object') {
+						newarr[newarr.length] = copy(this[i]);
+					}
+					newarr[newarr.length] = this[i];
+				}
+				return newarr;
+			}
+
+		}
+
+
+		// indexOf  lastIndexOf  includes   reverse  join  sort  数组合并  
+		// some  every  map  filter   Max   Min   去空
+	</script>
+</body>
+</html>
