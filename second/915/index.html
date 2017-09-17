@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//当前浏览器到屏幕左边的距离
+	// alert(window.screenLeft);
+	// alert(window.screenX);
+	// //浏览器可视区域的宽
+	// alert(window.innerWidth);
+	// // 整个浏览器的宽
+	// alert(window.outerWidth);
+	// // document对象客户端宽度
+	// alert(document.documentElement.clientWidth);
+	// // window对象是js顶层对象，它的的属性和方法可以省略window
+	// // window.frames
+	// // window.top
+	// // window.parent 
+	// // window.self
+	// // moveTo(100, 100);
+	// // moveBy(100, 100);
+	// // resizeTo(300, 300);
+
+	// // 时间间隔函数：常用于动画
+	// // 按照指定的周期，不断地执行某一个函数
+	// // 参数：回调函数，时间（以毫秒计数,最小值为4）
+	// // 三种方式：
+	// // 方式1：
+	// let t = window.setInterval(function(){
+	// 	alert(1);
+	// },1000);
+	// // 方式2：
+	// function fn(){
+	// 	alert(1);
+	// 	// 用setTimeOut来模拟setInterval的效果
+	// 	setTimeout(fn,1000);
+	// }
+	// let t = window.setInterval(fn,1000);
+	// // 方式3：
+	// // 使用变量来保存方法的地址，便于清除
+	// let t = window.setInterval(()=>{alert(1)},1000);
+
+	// // 清除时间间隔函数
+	// window.clearInterval(t);
+
+	// // 在指定的周期后，执行一次函数
+	// let t = window.setTimeout(fn,1000);
+	// // 清除，用于释放内存
+	// clearTimeout(t);
+
+	// // 确定框，自带有true、false
+	// alert(confirm('确定退出吗？'));
+
+	// 打开文件
+	// 打开地址、新窗口名字、新窗口修饰(样式)、是否有历史记录
+	// open('index.html','newwindow','width=500，height=500,top=50');
+	// close();
+	
+	// 返回浏览器历史列表中的 URL 数量。
+	// history.length
+
+	// 没有参数，对历史记录没有影响
+	// history.forward();
+	// history.back();
+	//参数： 0 表示刷新  1前进  -1后退
+	// history.go();
+	
+	  let num = 'abcd';
+{
+	let num = 10;
+	{
+		num = 20;
+		// console.log(num);  //报错，上面的num为全局变量，但是这个块级作用域中用let声明了局部变量num,绑定了这个区域，所以num = 20;赋值出错
+		let num = 'a';
+	}
+	console.log(num);  //20
+}
+console.log(num);  //'abcd'       
+	</script>
+</body>
+</html>
