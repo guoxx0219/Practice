@@ -1,0 +1,281 @@
+header .header-main>li:nth-of-type(1) a{
+	color: #2a333c;
+}
+header .header-main>li:nth-of-type(5) a{
+	color: #2a333c !important;
+}
+header .header-main>li:nth-of-type(4) a{
+	color: #4e97d9;
+}
+/* employ开始 */
+.employ{
+	width: 100%;
+	height: 467px;
+	background-color: #555555;
+	position: relative;
+	overflow: hidden;
+}
+.employ-box{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;left: 0;
+	overflow: hidden;
+	background: url('../img/employ.jpg')no-repeat center center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.img_bg{
+	background: url('../img/yy.png') repeat;
+	position: absolute;
+	top: 0;left: 0;
+	width: 100%;
+	height: 100%;
+}
+.employ>.img_bg{
+	background-image: url('../img/yy2.png'); 
+}
+.con{
+	width: 90%;
+	position: absolute;
+	left: 5%;
+	top: 40%;
+	height: 122px;
+	text-align: center;
+}
+.con>.t{
+	font: 50px/1.8 "microsoft yahei";
+	transition: 400ms ease 0ms;
+	transform: translate(0px, 0px);
+	color: #fff;
+}
+.con>.c{
+	font-size: 18px;
+	transition: 400ms ease 300ms;
+	transform: translate(0px, 0px);
+	color: #fff;
+}
+/* employ结束 */
+/* about开始 */
+.about{
+	padding: 6% 0px 8%;
+	letter-spacing: 1.2px;
+	line-height: 28px;
+	background: #F8F8F8;
+}
+.title{
+	font-size: 25px;
+	width: 90%;
+	text-align: center;
+	color: #000;
+	margin: 0px auto 45px;
+}
+.text{
+	width: 846px;
+	margin: 0px auto;
+	color: #646464;
+	font-size: 14px;
+}
+/* about结束 */
+/* life开始 */
+.life{
+	height: 670px;
+}
+.life>dd{
+	float: left;
+	width: 20%;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	background: #fff;
+}
+.life-span{
+	background-color: #08a27c;
+	z-index: 2;
+	position: absolute;
+	display: block;
+	transition: 0.4s 0.2s;
+}
+.span1{
+	width: 1px;
+	height: 0%;
+	left: 2%;
+	bottom: 2%;
+}
+.span2{
+	width: 1px;
+	height: 0%;
+	right: 2%;
+	top: 2%;
+}
+.span3{
+	width: 0;
+	height: 1px;
+	left: 2%;
+	top: 2%;
+}
+.span4{
+	height: 1px;
+	width: 0%;
+	right: 2%;
+	bottom: 2%;
+}
+.img{
+	width: 100%;
+	height: 384px;
+	overflow: hidden;
+}
+.imgbg1,.imgbg2,.imgbg3,.imgbg4,.imgbg5{
+	background-image: url('../img/life1.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	transition: 600ms ease 0ms;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.imgbg2{
+	background-image: url('../img/life2.jpg');
+}
+.imgbg3{
+	background-image: url('../img/life3.jpg');
+}
+.imgbg4{
+	background-image: url('../img/life4.jpg');
+}
+.imgbg5{
+	background-image: url('../img/life5.jpg');
+}
+.life>dd:hover .imgbg{
+	transform: scale(1.1);
+}
+.life-con{
+	background-color: #fff;
+	color: #646464;
+	font-size: 14px;
+	position: relative;
+	text-align: justify;
+	padding: 80px 15% 30px;
+	letter-spacing: 1.2px;
+	line-height: 24px;
+	height: 335px;
+}
+.life-con>.num{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #0db78f;
+	right: 50%;
+	margin-right: -25px;
+	text-align: center;
+	top: -25px;
+	color: #fff;
+	font: 30px/50px "HelveticaNeueCondensed","futura_lightregular","times new roman","microsoft yahei";
+	z-index: 10;
+}
+.life-con>.t2{
+	color: #000;
+}
+.life-con>.c2{
+	color: #646464;
+	text-align: justify;
+}
+.twoDD .num{
+	top: 100%;
+	margin-top: -25px;
+}
+.life>dd:hover .span1{
+	height: 96%;
+}
+.life>dd:hover .span2{
+	height: 96%;
+}
+.life>dd:hover .span3{
+	width: 96%;
+}
+.life>dd:hover .span4{
+	width: 96%;
+}
+/* life结束 */
+/* cut-img开始 */
+.cut-img{
+	padding: 12% 0px; 
+	color: #fff;
+	font-size: 14px;
+	background: url('../img/employ_bg2.jpg') no-repeat center center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.inner{
+	width: 1100px;
+	height: 588px;
+	margin: 0px auto; 
+}
+.inner>dd{
+	width: 40%;
+	float: left;
+	height: 196px;
+	margin-right: 10%;
+}
+.inner>dd>p{
+	font-size: 20px;
+	line-height: 1.5;
+	color: #fff;
+}
+.inner>dd p.p3{
+	height: 1px;
+	overflow: hidden;
+	width: 40px;
+	margin: 9px 0px 20px;
+	background: #fff;
+}
+.inner>dd>div{
+	color: #fff;
+}
+/* cut-img结束 */
+footer{
+	background: #F8F8F8;
+}
+
+@media screen and (max-width: 1600px){
+	.img{
+		height: 335px;
+	}
+	.life-con{
+		padding: 30px 10%;
+	}
+}
+@media screen and (max-width: 1370px){
+	.life-con>.t2{
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+	.life-con>.c2{
+		font-size: 13px;
+	}
+}
+@media screen and (max-width: 1024px){
+	.img{
+		width: 50%;
+		float: left;
+		display: block;
+	}
+	.life-con{
+		padding: 60px 6% 0px;
+		float: left;
+		display: block;
+		width: 38%;
+	}
+}
+@media screen and (max-width: 641px){
+	.img{
+		width: auto;
+		float: none;
+	}
+	.life-con{
+		height: auto;
+		padding: 60px 7%;
+	}
+}
